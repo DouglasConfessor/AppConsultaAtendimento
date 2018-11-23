@@ -8,7 +8,7 @@
         tools:context=".MainActivity">
 
     <TextView
-            android:text="Bem vindo ao aplicativo Consulta Atendimento"
+            android:text="Bem vindo ao aplicativo Consulta Atendimento  "
             android:layout_width="338dp"
             android:layout_height="58dp"
             android:id="@+id/textView" android:textSize="18sp" app:layout_constraintStart_toStartOf="parent"
