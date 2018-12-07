@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.Toast
+import android.content.Intent
+
 
 class MainActivity : AppCompatActivity() {
 
