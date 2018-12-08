@@ -10,6 +10,14 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
+        val argumentos:Bundle=intent.extras
+
+        val usuario:String=argumentos.getString("usuario")
+        val numerosus:String=argumentos.getString("numerosus")
+
+        textView_usuario.text="Bem vindo, $usuario!!"
+        textView_numero.text="Número do SUS: $numerosus"
+
 
     }
 }
