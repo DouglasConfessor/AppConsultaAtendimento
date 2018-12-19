@@ -6,6 +6,9 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.Toast
 import android.content.Intent
+import android.support.v7.app.AlertDialog
+import android.content.DialogInterface
+import kotlinx.android.synthetic.main.cadastro.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +23,15 @@ class MainActivity : AppCompatActivity() {
         val numerosus:String=editText2.text.toString()
         val senha:String=editText3.text.toString()
 
-        if (senha=="1234"){
+        if (usuario=="") {
+            Toast.makeText(this, "Campo obrigátório!", Toast.LENGTH_LONG).show()
+        }
+
+        else if (numerosus=="") {
+            Toast.makeText(this, "Digite o número do SUS", Toast.LENGTH_LONG).show()
+
+        }
+        else if (senha=="1234"){
             val intentCall:Intent=Intent(this,MainActivity2::class.java)
             val parametros:Bundle=Bundle()
             parametros.putString("usuario",usuario)
@@ -32,8 +43,45 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun cadastrar(view: View){
+        val mBuilder = AlertDialog.Builder(this@MainActivity)
+        val teste = getLayoutInflater().inflate(R.layout.cadastro, null)
+
+        mBuilder.setView(teste)
+        val dialog = mBuilder.create()
+        dialog.show()
+
+        //val intentCall:Intent=Intent(this,R.layout.cadastro::class.java)
+
+    }
+
+    fun concluir(view: View){
+
+        /*val cad_usuario:String = editText4.text.toString()
+        val cad_email:String = editText12.text.toString()
+        val cad_numerosus:String = editText6.text.toString()
+        val cad_senha:String = editText7.text.toString()
+
+        if (cad_usuario=="") {
+            Toast.makeText(this, "Campo obrigatório!", Toast.LENGTH_LONG).show()
+        }
+        else if (cad_email==""){
+            Toast.makeText(this, "Campo obrigátório!", Toast.LENGTH_LONG).show()
+
+        }else if (cad_numerosus==""){
+            Toast.makeText(this,"Campo obrigátório!(5 números)",Toast.LENGTH_LONG).show()
+
+        }else if (cad_senha==""){
+            Toast.makeText(this,"Campo obrigátório!(Mínimo de 5 caracteres)",Toast.LENGTH_LONG).show()
+        }*/
+
+            Toast.makeText(this, "Cadastro concluído!", Toast.LENGTH_LONG).show()
+            val intentCall: Intent = Intent(this, MainActivity::class.java)
+            startActivity(intentCall)
 
 
-
-
+    }
 }
+
+
+
